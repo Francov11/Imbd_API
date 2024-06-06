@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 IMDB Movies</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 100 IMDB Movies</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Rating</th>
+                <th>Year</th>
+                <th>IMDB Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach(movie => { %>
+            <tr>
+                <td><%= movie.rank %></td>
+                <td><%= movie.title %></td>
+                <td><%= movie.description %></td>
+                <td><img src="<%= movie.image %>" alt="<%= movie.title %>"></td>
+                <td><%= movie.rating %></td>
+                <td><%= movie.year %></td>
+                <td><a href="<%= movie.imdb_link %>">Link</a></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
